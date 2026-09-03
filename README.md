@@ -1,7 +1,6 @@
 # LL-CwSG
 
-Reference implementation and reproduction code for "local learning with
-imperfect analog synapses": Backprop, DCL, CwC and CwSG in float32 and on
+Reference implementation and reproduction code for "TITLE (todo)": Backprop, DCL, CwC and CwSG in float32 and on
 measured memristor devices (StoSignSGD pulse updates).
 
 ## Layout
@@ -31,20 +30,15 @@ Device subcommands skip any device whose file is missing.
 ## Reproduce
 
 ```bash
-python tests/reproduce.py table2_cifar10  # Table 2, CIFAR-10 CNN-7: BP/DCL/CwC/CwSG, SGD + SignSGD
-python tests/reproduce.py noise_sweep     # Figure 3b (CNN-7): StoSignSGD write-noise sweep, BP vs CwSG
-python tests/reproduce.py svhn_devices    # Figure 5 c,f: SVHN on calibrated PCM and FM devices
+python tests/reproduce.py table2_cifar10  # CIFAR-10 CNN-7: BP/DCL/CwC/CwSG, SGD + SignSGD
+python tests/reproduce.py noise_sweep     # CNN-7, StoSignSGD write-noise sweep, BP vs CwSG
+python tests/reproduce.py svhn_devices    # SVHN on calibrated PCM and FM devices
 python tests/reproduce.py adc_quant       # 8-bit ADC = DAC datapath on the devices: BP, BPq, CwSG
-python tests/reproduce.py bs1_fp32        # Table 3 FP32 column: MNIST + SVHN at batch size 1
-python tests/reproduce.py pcm_mnist       # MNIST on calibrated PCM devices (+ FP32 baselines)
+python tests/reproduce.py bs1_fp32        # FP32 MNIST + SVHN at batch size 1
+python tests/reproduce.py pcm_mnist       # MNIST on PCM devices (+ FP32 baselines)
 python tests/bs1_cifar10.py               # CIFAR-10 Backprop, batch size 1, StoSignSGD (FP32)
 ```
 
 Default is 1 seed; `--full` runs the 5-seed/5-run paper protocol. Most
 subcommands take `--algos` / `--datasets` / `--devices` to split the work
-across GPUs. Results are written incrementally to `results/*.json`; each run
-ends with a console table against the published reference values (a
-single-seed run typically lands within 1-2 points of the 5-seed means;
-cross-GPU bit-exactness is not expected).
-
-The software programs developed for: todo
+across GPUs. Results are written incrementally to `results/*.json`;

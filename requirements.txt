@@ -1,0 +1,10 @@
+# GPU: pip install "jax[cuda12]==0.4.30" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+jax==0.4.30
+jaxlib==0.4.30
+flax==0.8.5
+optax==0.2.4
+numpy==2.0.2
+h5py==3.12.1
+tensorflow==2.18.0
+tensorflow-datasets==4.9.3
+tqdm==4.67.1

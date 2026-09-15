@@ -1,6 +1,6 @@
 # LL-CwSG
 
-Reference implementation and reproduction code for "TITLE (todo)": Backprop, DCL, CwC and CwSG in float32 and on
+Reference implementation and reproduction code for "Local learning with imperfect analog synapses": Backprop, DCL, CwC and CwSG in float32 and on
 measured memristor devices (StoSignSGD pulse updates).
 
 ## Layout
